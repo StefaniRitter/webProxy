@@ -1,0 +1,3 @@
+1779832946.294331: url requisitada: https://open.spotify.com/intl-pt/; ação: permitido
+1779832978.350154: url requisitada: http://127.0.0.1:8080; ação: filtrado
+1779832995.340817: url requisitada: redes-sociais.net; ação: bloqueado
