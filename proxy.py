@@ -9,11 +9,12 @@ app = Flask(__name__)
 def proxy(url_destino):
     acao = 'permitido'
     timestamp = (dt.now()).timestamp()
+    data_formatada = dt.now().strftime("%d/%m/%Y %H:%M:%S")
 
     url = verificaURL(url_destino)
     if url[0] == "erro":
         acao = url[1]
-        registraLog(url_destino, timestamp, acao)
+        registraLog(url_destino, timestamp, data_formatada, acao)
         return redirect("/erro")
     
     resposta = requests.get(url[0])
@@ -21,7 +22,7 @@ def proxy(url_destino):
     cont = verificaPalavroes(conteudo, acao)
     acao = cont[1]
     cont = cont[0]
-    registraLog(url_destino, timestamp, acao)
+    registraLog(url_destino, timestamp, data_formatada, acao)
     return f"{cont}"
 
 @app.route("/erro", methods=["GET"])
@@ -32,9 +33,9 @@ def erro():
 def teste():
     return render_template("index.html")"""
 
-def registraLog(url, timestamp, acao):
+def registraLog(url, timestamp, data, acao):
     with open('log.txt', 'a', encoding='utf-8') as arquivo:
-        arquivo.write(f"{timestamp}: url requisitada: {url}; ação: {acao}\n")
+        arquivo.write(f"[{timestamp} - {data}]: Url: {url}; Ação: {acao}\n")
 
 
 
