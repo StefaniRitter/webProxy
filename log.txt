@@ -1,7 +1,0 @@
-[1779881964.767031 - 27/05/2026 08:39:24]: Url: http://127.0.0.1:8080; Ação: filtrado
-[1779881984.839337 - 27/05/2026 08:39:44]: Url: https://open.spotify.com/intl-pt/; Ação: permitido
-[1779882014.170996 - 27/05/2026 08:40:14]: Url: https://github.com/StefaniRitter/webProxy; Ação: permitido
-[1779882051.675785 - 27/05/2026 08:40:51]: Url: https://github.com/StefaniRitter/webProxy; Ação: permitido
-[1779882080.213353 - 27/05/2026 08:41:20]: Url: redes-sociais.net; Ação: bloqueado
-[1779882190.071138 - 27/05/2026 08:43:10]: Url: http://www.exemplo.com; Ação: permitido
-[1779882288.422244 - 27/05/2026 08:44:48]: Url: http://site.proibidao.com; Ação: bloqueado

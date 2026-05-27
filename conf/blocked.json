@@ -1,1 +1,8 @@
-{ "sitesBloqueados": ["www.sitex.com", "http://site.proibidao.com","joguinhos.io"] }
+{ 
+    "sitesBloqueados": [
+    "www.hackearPrisco.com", 
+    "site.proibidao.br",
+    "urubu-do-pix.org", 
+    "olhaovirus.com.br"
+    ] 
+}
