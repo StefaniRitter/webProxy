@@ -8,17 +8,17 @@ Caso a URL esteja bloqueada, o proxy retorna ao usuário uma página de erro per
 
 ## Tecnologias Utilizadas
 
-Linguagem: Python 3.12.3
+**Linguagem**: Python 3.12.3
 
-Framework Flask 3.0.2: utilizado para subir o servidor web local, escutar as requisições na porta `5000` e interceptar os caminhos digitados.
-  * redirect: utilizada para desviar o fluxo do navegador automaticamente para a rota de erro `/erro` caso o site acessado esteja bloqueado.
-  * render_template: utilizada para localizar e renderizar arquivos HTML personalizados dentro da pasta `templates`.
+**Framework Flask 3.0.2**: utilizado para subir o servidor web local, escutar as requisições na porta `5000` e interceptar os caminhos digitados.
+  * **redirect**: utilizada para desviar o fluxo do navegador automaticamente para a rota de erro `/erro` caso o site acessado esteja bloqueado.
+  * **render_template**: utilizada para localizar e renderizar arquivos HTML personalizados dentro da pasta `templates`.
 
-Bibliotecas: 
-* requests: utilizada para disparar as requisições HTTP reais para os sites na internet e trazer o conteúdo de volta para o proxy.
-* re (Expressões Regulares): aplicada para buscar os palavrões no HTML de forma *case-insensitive* e fazer as substituições inteligentes.
-* json: utilizada para abrir e ler os arquivos locais de configuração (`blocked.json` e `words.json`).
-* datetime: utilizada para capturar a data e hora exatas de cada acesso para gerar os logs do sistema.
+**Bibliotecas**: 
+* **requests**: utilizada para disparar as requisições HTTP reais para os sites na internet e trazer o conteúdo de volta para o proxy.
+* **re (Expressões Regulares)**: aplicada para buscar os palavrões no HTML de forma *case-insensitive* e fazer as substituições inteligentes.
+* **json**: utilizada para abrir e ler os arquivos locais de configuração (`blocked.json` e `words.json`).
+* **datetime**: utilizada para capturar a data e hora exatas de cada acesso para gerar os logs do sistema.
 
 ## Justificativa para a escolha das tecnologias
 
