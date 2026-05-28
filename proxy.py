@@ -1,7 +1,7 @@
 ## instalar python3, flask, requests se necessário
-from flask import Flask, json, redirect, render_template
+from flask import Flask, redirect, render_template
 from datetime import datetime as dt
-import requests, re
+import requests, re, json
 
 # parâmetros a mais, para carregar a imagem da página de erro
 app = Flask(__name__, static_folder='img', static_url_path='/img')
