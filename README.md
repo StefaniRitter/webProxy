@@ -40,16 +40,38 @@ webproxy/
 └── README.md
 ```
 
-## Pré-requisitos para execução
+## Passo a passo e requisitos para execução
 
-### 1. Instalar o Python (Ambiente WSL / Linux)
+### 1. Clonar o repositório
+```bash
+git clone https://github.com/StefaniRitter/webProxy.git
+```
+
+### 2. Acessar o diretório do projeto
+```bash
+cd webProxy
+```
+
+### 3. Instalar o Python (Ambiente WSL / Linux)
 ```bash
 sudo apt update
 sudo apt install python3-pip python3-dev -y
+```
 
+### 4. Instalar Flask
+```bash
+pip install flask requests
+```
 
+### 5. Executar o proxy
+```bash
+python3 proxy.py
+```
 
-
+### 6. Acessar no navegador, substituindo <url_requisitada> pela url que se deseja acessar. Ex: http://localhost:5000/http://urubu-do-pix.org
+```bash
+http://localhost:5000<url_requisitada>
+```
 
 
 
