@@ -6,6 +6,16 @@ Este projeto foi desenvolvido como parte da disciplina de Sistemas para Internet
 
 Caso a URL esteja bloqueada, o proxy retorna ao usuário uma página de erro personalizada. Se o acesso for permitido, o sistema realiza a análise do conteúdo da página, identificando palavras cadastradas como proibidas e substituindo-as automaticamente por seus respectivos termos definidos. Quando não há bloqueios ou palavras proibidas, o conteúdo original da página é retornado normalmente ao usuário.
 
+## Objetivos Específicos 
+
+ * **Interceptação de Tráfego**: Desenvolver um mecanismo capaz de receber requisições do navegador, capturar a URL de destino como parâmetro e atuar como intermediário na busca de dados na internet através da biblioteca requests.
+
+ * **Controle de Acesso Dinâmico**: Implementar uma rotina de validação estruturada em arquivos JSON para identificar domínios restritos e desviar o fluxo do usuário para uma interface gráfica de erro customizada via rotas de redirecionamento.
+
+ * **Filtragem de Conteúdo**: Construir um motor de busca e substituição textual em tempo real utilizando Expressões Regulares, aplicando filtros capazes de sanitizar strings proibidas antes da entrega do código HTML final.
+
+ * **Auditoria de Conexões**: Estruturar um sistema automatizado de persistência de dados para gerar logs cronológicos detalhados, registrando o histórico de acessos de cada sessão.
+
 ## Tecnologias Utilizadas
 
 **Linguagem**: Python 3.12.3
