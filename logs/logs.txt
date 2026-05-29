@@ -1,0 +1,8 @@
+[1780015726.996877 - 28/05/2026 21:48:46]: Url: https://github.com/StefaniRitter/webProxy; Ação: permitido;
+[1780015748.737166 - 28/05/2026 21:49:08]: Url: http://site.proibidao.br; Ação: bloqueado;
+[1780015754.486332 - 28/05/2026 21:49:14]: Url: site.proibidao.br; Ação: bloqueado;
+[1780015771.513943 - 28/05/2026 21:49:31]: Url: http://127.0.0.1:8080; Ação: conteúdo filtrado;
+[1780015787.494724 - 28/05/2026 21:49:47]: Url: http://127.0.0.1:8080/parte2; Ação: conteúdo filtrado;
+[1780015983.387272 - 28/05/2026 21:53:03]: Url: http://127.0.0.1:8080; Ação: conteúdo filtrado;
+[1780015992.552181 - 28/05/2026 21:53:12]: Url: http://127.0.0.1:8080/parte2; Ação: conteúdo filtrado;
+[1780015999.556668 - 28/05/2026 21:53:19]: Url: http://127.0.0.1:8080/; Ação: conteúdo filtrado;
