@@ -2,7 +2,7 @@
 
 ## Visão Geral
 
-Este projeto foi desenvolvido como parte da disciplina de Sistemas para Internet II, com o objetivo de implementar um Web Proxy para controle e filtragem de conteúdo web. O sistema atua intermediando o acesso às páginas da Internet, analisando as URLs requisitadas e verificando se estão presentes em uma lista de bloqueio.
+Este projeto foi desenvolvido como parte da disciplina de Sistemas para Internet II, da Universidade Federal de Rio Grande (FURG), com o objetivo de implementar um Web Proxy para controle e filtragem de conteúdo web. O sistema atua intermediando o acesso às páginas da internet, analisando as URLs requisitadas e verificando se estão presentes em uma lista de bloqueio.
 
 Caso a URL esteja bloqueada, o proxy retorna ao usuário uma página de erro personalizada. Se o acesso for permitido, o sistema realiza a análise do conteúdo da página, identificando palavras cadastradas como proibidas e substituindo-as automaticamente por seus respectivos termos definidos. Quando não há bloqueios ou palavras proibidas, o conteúdo original da página é retornado normalmente ao usuário.
 
@@ -11,25 +11,25 @@ Caso a URL esteja bloqueada, o proxy retorna ao usuário uma página de erro per
 **Linguagem**: Python 3.12.3
 
 **Framework Flask 3.0.2**: utilizado para subir o servidor web local, escutar as requisições na porta `5000` e interceptar os caminhos digitados.
-  * **redirect**: utilizada para desviar o fluxo do navegador automaticamente para a rota de erro `/erro` caso o site acessado esteja bloqueado.
-  * **render_template**: utilizada para localizar e renderizar arquivos HTML personalizados dentro da pasta `templates`.
+  * **redirect**: utilizado para desviar o fluxo do navegador automaticamente para a rota `/erro` caso o site acessado esteja bloqueado.
+  * **render_template**: utilizado para localizar e renderizar arquivos HTML personalizados dentro da pasta `templates`.
 
 **Bibliotecas**: 
 * **requests**: utilizada para disparar as requisições HTTP reais para os sites na internet e trazer o conteúdo de volta para o proxy.
-* **re (Expressões Regulares)**: aplicada para buscar os palavrões no HTML de forma *case-insensitive* e fazer as substituições inteligentes.
+* **re (Expressões Regulares)**: aplicada para buscar as palavras proibidas no HTML de forma *case-insensitive* e fazer as substituições inteligentes.
 * **json**: utilizada para abrir e ler os arquivos locais de configuração (`blocked.json` e `words.json`).
 * **datetime**: utilizada para capturar a data e hora exatas de cada acesso para gerar os logs do sistema.
 
-## Justificativa para a escolha das tecnologias
+## Justificativa para a Escolha das Tecnologias
 
-Para este projeto, optou-se pela utilização da linguagem Python em conjunto com o framework Flask, por serem tecnologias abordadas na disciplina e que despertaram um interesse de aprofundamento prático. A escolha também foi motivada pela simplicidade de desenvolvimento proporcionada, permitindo uma implementação mais rápida, legível e organizada do proxy web.
+Para este projeto, optou-se pela utilização da linguagem Python em conjunto com o framework Flask, por serem tecnologias abordadas na disciplina e que despertaram um interesse de aprofundamento prático. A escolha também foi motivada pela simplicidade de desenvolvimento proporcionada, permitindo uma implementação mais rápida, legível e organizada do proxy.
 
-Uma das principais vantagens encontradas ao usar Flask foi a abstração eficiente sobre o protocolo HTTP e sobre o gerenciamento das conexões TCP. Diferentemente da utilização direta da biblioteca socket, o Flask reduz a complexidade relacionada à manipulação manual de buffers, controle de conexões e interpretação das requisições HTTP, permitindo que o foco do desenvolvimento permanecesse concentrado na lógica principal do projeto, como o bloqueio de URLs, filtragem de conteúdo e geração de logs.
+Uma das principais vantagens encontradas ao usar Flask foi a abstração sobre o protocolo HTTP e sobre o gerenciamento das conexões TCP. Diferentemente da utilização direta da biblioteca socket, o Flask reduz a complexidade relacionada à manipulação manual de buffers, controle de conexões e interpretação das requisições HTTP, permitindo que o foco do desenvolvimento permanecesse concentrado na lógica principal do projeto, como o bloqueio de URLs, filtragem de conteúdo e geração de logs.
 Além disso, a integração do Flask com funções como redirect e render_template facilitou o desenvolvimento do fluxo de navegação e da interface de erro personalizada, contribuindo para uma estrutura mais modular e organizada do sistema.
 A biblioteca requests também teve papel fundamental no projeto por simplificar o envio de requisições HTTP e o recebimento do conteúdo das páginas web. Já o uso de expressões regulares com a biblioteca re permitiu implementar filtros de palavras de maneira dinâmica e case-insensitive, possibilitando a substituição dos termos sem depender de comparações simples de texto.
 
 Em contraponto, uma das principais dificuldades encontradas durante o desenvolvimento com Flask foi o tratamento de páginas web modernas, que utilizam múltiplos recursos externos, rotas dinâmicas, carregamento assíncrono e caminhos relativos para arquivos CSS e JavaScript. Como o proxy intercepta e reescreve URLs dinamicamente, alguns desses recursos podem gerar falhas de carregamento ou problemas de resolução de rotas quando acessados através do servidor local.
-Outra limitação observada está relacionada ao fato de o Flask não operar em um nível tão baixo quanto sockets puros. Embora isso aumente a produtividade e reduza a complexidade da implementação, também limita o controle detalhado sobre determinados aspectos do tráfego de rede e do comportamento interno das conexões HTTP. Ainda assim, considerando o escopo acadêmico do projeto, a utilização do Flask mostrou-se adequada por equilibrar simplicidade, produtividade e facilidade de manutenção.
+Outra limitação observada está relacionada ao fato de o Flask não operar em um nível tão baixo quanto sockets puros. Embora isso aumente a produtividade e reduza a complexidade da implementação, também limita o controle detalhado sobre determinados aspectos do tráfego de rede e do comportamento interno das conexões HTTP.
 
 ## Estrutura do Projeto:
 ```
@@ -47,19 +47,19 @@ webproxy/
 └── README.md
 ```
 
-## Pré-requisitos e execução
+## Passo a Passo para a Execução em Ambiente WSL/Linux
 
 ### 1. Clonar o repositório
 ```bash
 git clone https://github.com/StefaniRitter/webProxy.git
 ```
 
-### 2. Acessar o diretório do projeto
+### 2. Acessar a pasta do projeto
 ```bash
 cd webProxy
 ```
 
-### 3. Instalar o Python (Ambiente WSL / Linux)
+### 3. Instalar Python
 ```bash
 sudo apt update
 sudo apt install python3-pip python3-dev -y
@@ -87,7 +87,7 @@ Se necessário, esses arquivos podem ser alterados, permitindo a personalizaçã
 
 ### Bloqueio de URLs (`conf/blocked.json`)
 Para bloquear novos sites, abra o arquivo `blocked.json` e adicione o domínio ou IP desejado dentro do array `sitesBloqueados`. 
-Importante: O proxy faz a checagem de forma limpa, portanto, adicione os endereços **SEM** o protocolo `http://` ou `https://`.
+**Importante**: O proxy faz a checagem de forma limpa, portanto, adicione os endereços **SEM** o protocolo `http://` ou `https://`.
 
 ```json
 {
