@@ -6,3 +6,8 @@
 [1780015983.387272 - 28/05/2026 21:53:03]: Url: http://127.0.0.1:8080; Ação: conteúdo filtrado;
 [1780015992.552181 - 28/05/2026 21:53:12]: Url: http://127.0.0.1:8080/parte2; Ação: conteúdo filtrado;
 [1780015999.556668 - 28/05/2026 21:53:19]: Url: http://127.0.0.1:8080/; Ação: conteúdo filtrado;
+[1780057308.044755 - 29/05/2026 09:21:48]: Url: spotify.com; Ação: conteúdo filtrado;
+[1780057335.69955 - 29/05/2026 09:22:15]: Url: https://open.spotify.com/; Ação: conteúdo filtrado;
+[1780057363.443039 - 29/05/2026 09:22:43]: Url: https://open.spotify.com/; Ação: conteúdo filtrado;
+[1780057533.67431 - 29/05/2026 09:25:33]: Url: urubu-do-pix.org; Ação: bloqueado;
+[1780057563.871032 - 29/05/2026 09:26:03]: Url: http://127.0.0.1:8080/parte2; Ação: conteúdo filtrado;

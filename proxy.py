@@ -63,7 +63,7 @@ def verificaPalavroes(cont, acao):
         palavroes = json.load(arquivo)
         contOriginal = cont # salva conteudo original para verificar alterações depois
         for k, v in palavroes.items(): # percorre o dicionário de palavrões
-            #usei ia 
+            
             # tratamento para case-sensitive
             def ajustar(dados):
                 palavraOriginal = dados.group(0) #captura a palavra na formatação do site
