@@ -38,8 +38,7 @@ Uma das principais vantagens encontradas ao usar Flask foi a abstração sobre o
 Além disso, a integração do Flask com funções como redirect e render_template facilitou o desenvolvimento do fluxo de navegação e da interface de erro personalizada, contribuindo para uma estrutura mais modular e organizada do sistema.
 A biblioteca requests também teve papel fundamental no projeto por simplificar o envio de requisições HTTP e o recebimento do conteúdo das páginas web. Já o uso de expressões regulares com a biblioteca re permitiu implementar filtros de palavras de maneira dinâmica e case-insensitive, possibilitando a substituição dos termos sem depender de comparações simples de texto.
 
-Em contraponto, uma das principais dificuldades encontradas durante o desenvolvimento com Flask foi o tratamento de páginas web modernas, que utilizam múltiplos recursos externos, rotas dinâmicas, carregamento assíncrono e caminhos relativos para arquivos CSS e JavaScript. Como o proxy intercepta e reescreve URLs dinamicamente, alguns desses recursos podem gerar falhas de carregamento ou problemas de resolução de rotas quando acessados através do servidor local.
-Outra limitação observada está relacionada ao fato de o Flask não operar em um nível tão baixo quanto sockets puros. Embora isso aumente a produtividade e reduza a complexidade da implementação, também limita o controle detalhado sobre determinados aspectos do tráfego de rede e do comportamento interno das conexões HTTP.
+Em contraponto, uma das principais limitações observadas está relacionada ao fato de o Flask não operar em um nível tão baixo quanto sockets puros. Embora isso aumente a produtividade e reduza a complexidade da implementação, também limita o controle detalhado sobre determinados aspectos do tráfego de rede e do comportamento interno das conexões HTTP.
 
 ## Estrutura do Projeto:
 ```
